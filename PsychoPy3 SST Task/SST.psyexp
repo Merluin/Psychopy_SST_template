@@ -147,8 +147,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if ((signal === 1)) {&amp;#10;    if ((key_resp.keys.length &gt; 0)) {&amp;#10;        ssd_1 = (ssd_1 - 0.05);&amp;#10;        if ((ssd_1 &lt;= 0.05)) {&amp;#10;            ssd_1 = 0.05;&amp;#10;        }&amp;#10;    } else {&amp;#10;        ssd_1 = (ssd_1 + 0.05);&amp;#10;        if ((ssd_1 &gt;= 0.65)) {&amp;#10;            ssd_1 = 0.65;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:&amp;#10;        ssd_1 = ssd_1 - 0.050&amp;#10;        if ssd_1 &lt;= 0.050:&amp;#10;            ssd_1 = 0.050&amp;#10;    else:&amp;#10;        ssd_1 = ssd_1 + 0.050&amp;#10;        if ssd_1 &gt;= 0.650:&amp;#10;            ssd_1 = 0.650" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="if ((signal === 1)) {&amp;#10;    if ((key_resp.keys.length &gt; 0)) {&amp;#10;        ssd = (ssd - 0.05);&amp;#10;        if ((ssd &lt;= 0.05)) {&amp;#10;            ssd = 0.05;&amp;#10;        }&amp;#10;    } else {&amp;#10;        ssd = (ssd + 0.05);&amp;#10;        if ((ssd &gt;= 0.65)) {&amp;#10;            ssd = 0.65;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:&amp;#10;        ssd = ssd - 0.050&amp;#10;        if ssd &lt;= 0.050:&amp;#10;            ssd = 0.050&amp;#10;    else:&amp;#10;        ssd = ssd + 0.050&amp;#10;        if ssd &gt;= 0.650:&amp;#10;            ssd = 0.650" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="ssd_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -535,7 +535,7 @@
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <KeyboardComponent name="thanks_kb">
-        <Param val="'q'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="" valType="str" updates="constant" name="correctAns"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
