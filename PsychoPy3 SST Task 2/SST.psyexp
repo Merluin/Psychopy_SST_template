@@ -96,8 +96,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="correct_msg = 'Correct'&amp;#10;incorrect_msg = 'Oops'&amp;#10;too_slow_msg = 'To slow'&amp;#10;too_fast_msg = 'To fast'&amp;#10;correct_stop_msg = 'Perferfect stop'&amp;#10;incorrect_stop_msg = 'You must Stop !'&amp;#10;msg = &quot;&quot;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="correct_msg = &quot;Correct&quot;;&amp;#10;incorrect_msg = &quot;Oops&quot;;&amp;#10;too_slow_msg = &quot;To slow&quot;;&amp;#10;too_fast_msg = &quot;To fast&quot;;&amp;#10;correct_stop_msg = &quot;Perferfect stop&quot;;&amp;#10;incorrect_stop_msg = &quot;You must Stop !&quot;;&amp;#10;msg = &quot;&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((signal === 0)) {&amp;#10;    if ((key_resp.keys !== null)) {&amp;#10;        if ((key_resp.rt &lt;= go_start)) {&amp;#10;            msg = too_fast_msg;&amp;#10;        } else {&amp;#10;            if ((key_resp.corr === 1)) {&amp;#10;                msg = correct_msg;&amp;#10;            } else {&amp;#10;                if ((key_resp.corr === 0)) {&amp;#10;                    msg = incorrect_msg;&amp;#10;                } else {&amp;#10;                    if ((key_resp.rt &gt;= stop_start)) {&amp;#10;                        msg = too_slow_msg;&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    } else {&amp;#10;        msg = too_slow_msg;&amp;#10;    }&amp;#10;} else {&amp;#10;    if ((signal === 1)) {&amp;#10;        if ((key_resp.keys !== null)) {&amp;#10;            msg = incorrect_stop_msg;&amp;#10;        } else {&amp;#10;            msg = correct_stop_msg;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if signal == 0:&amp;#10;    if key_resp.keys is not None:&amp;#10;        if key_resp.rt &lt;= go_start :&amp;#10;            msg = too_fast_msg&amp;#10;        elif key_resp.corr == 1:&amp;#10;            msg = correct_msg&amp;#10;        elif key_resp.corr == 0:&amp;#10;            msg = incorrect_msg&amp;#10;        elif key_resp.rt &gt;= stop_start:&amp;#10;            msg = too_slow_msg&amp;#10;    else:&amp;#10;        msg = too_slow_msg&amp;#10;elif signal == 1:&amp;#10;    if key_resp.keys is not None:&amp;#10;        msg = incorrect_stop_msg&amp;#10;    else:&amp;#10;        msg = correct_stop_msg&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if ((signal === 0)) {&amp;#10;    if ((key_resp.keys !== null)) {&amp;#10;        if ((key_resp.rt &lt;= (StopSignal_start - 0.05))) {&amp;#10;            msg = too_fast_msg;&amp;#10;        } else {&amp;#10;            if ((key_resp.corr === 1)) {&amp;#10;                msg = correct_msg;&amp;#10;            } else {&amp;#10;                if ((key_resp.corr === 0)) {&amp;#10;                    msg = incorrect_msg;&amp;#10;                } else {&amp;#10;                    if ((key_resp.rt &gt;= ((StopSignal_start - 0.05) + ssd))) {&amp;#10;                        msg = too_slow_msg;&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    } else {&amp;#10;        msg = too_slow_msg;&amp;#10;    }&amp;#10;} else {&amp;#10;    if ((signal === 1)) {&amp;#10;        if ((key_resp.keys !== null)) {&amp;#10;            msg = incorrect_stop_msg;&amp;#10;        } else {&amp;#10;            msg = correct_stop_msg;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if signal == 0:&amp;#10;    if key_resp.keys is not None:&amp;#10;        if key_resp.rt &lt;= StopSignal_start - 0.05 :&amp;#10;            msg = too_fast_msg&amp;#10;        elif key_resp.corr == 1:&amp;#10;            msg = correct_msg&amp;#10;        elif key_resp.corr == 0:&amp;#10;            msg = incorrect_msg&amp;#10;        elif key_resp.rt &gt;= (StopSignal_start - 0.05 + ssd):&amp;#10;            msg = too_slow_msg&amp;#10;    else:&amp;#10;        msg = too_slow_msg&amp;#10;elif signal == 1:&amp;#10;    if key_resp.keys is not None:&amp;#10;        msg = incorrect_stop_msg&amp;#10;    else:&amp;#10;        msg = correct_stop_msg&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -138,17 +138,17 @@
       <CodeComponent name="ssd_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="event. Mouse(visible=False)&amp;#10;&amp;#10;# setting stt durations (psychopy needs sec)&amp;#10;dot_dur = 0.800&amp;#10;blank_dur = 1.6&amp;#10;go_dur = 0.1&amp;#10;stop_dur = 0.07&amp;#10;&amp;#10;&amp;#10;#ssd set to 150 and min 50 max 650&amp;#10;ssd_1 = 0.150&amp;#10;ssd_2 = 0.15&amp;#10;ssd = 0.15&amp;#10;&amp;#10;# setting sst timing presentation&amp;#10;dot_start = 0&amp;#10;blank_start = dot_dur&amp;#10;go_start = blank_start + blank_dur&amp;#10;stop_start = go_start + go_dur # + ssd in stop_img component&amp;#10;&amp;#10;&amp;#10;full_dur = stop_start + stop_dur + 0.800" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="new psychoJS.eventManager.Mouse({&quot;visible&quot;: false});&amp;#10;dot_dur = 0.8;&amp;#10;blank_dur = 1.6;&amp;#10;go_dur = 0.1;&amp;#10;stop_dur = 0.07;&amp;#10;ssd_1 = 0.15;&amp;#10;ssd_2 = 0.15;&amp;#10;ssd = 0.15;&amp;#10;dot_start = 0;&amp;#10;blank_start = dot_dur;&amp;#10;go_start = (blank_start + blank_dur);&amp;#10;stop_start = (go_start + go_dur);&amp;#10;full_dur = ((stop_start + stop_dur) + 0.8);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="event. Mouse(visible=False)&amp;#10;&amp;#10;# timing in which interval between Go and stop begin&amp;#10;StopSignal_start = 0.95&amp;#10;&amp;#10;# ssd set to 150 and min 50 max 650&amp;#10;ssd_1 = 0.150&amp;#10;ssd_2 = 0.15&amp;#10;ssd = 0.15" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="new psychoJS.eventManager.Mouse({&quot;visible&quot;: false});&amp;#10;StopSignal_start = 0.95;&amp;#10;ssd_1 = 0.15;&amp;#10;ssd_2 = 0.15;&amp;#10;ssd = 0.15;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="psychoJS.experiment.addData(&quot;SSD&quot;, (ssd * 1000));&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="thisExp.addData(&quot;SSD&quot;, ssd*1000)&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="thisExp.addData(&quot;SSD&quot;, ssd*1000)&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="if ((signal === 1)) {&amp;#10;    if ((key_resp.keys.length &gt; 0)) {&amp;#10;        ssd = (ssd - 0.05);&amp;#10;        if ((ssd &lt;= 0.05)) {&amp;#10;            ssd = 0.05;&amp;#10;        }&amp;#10;    } else {&amp;#10;        ssd = (ssd + 0.05);&amp;#10;        if ((ssd &gt;= 0.65)) {&amp;#10;            ssd = 0.65;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:&amp;#10;        ssd = ssd - 0.050&amp;#10;        if ssd &lt;= 0.050:&amp;#10;            ssd = 0.050&amp;#10;    else:&amp;#10;        ssd = ssd + 0.050&amp;#10;        if ssd &gt;= 0.650:&amp;#10;            ssd = 0.650" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="if (key_resp.rt) {&amp;#10;    if ((signal === 1)) {&amp;#10;        if ((key_resp.rt &lt;= (StopSignal_start + ssd))) {&amp;#10;            psychoJS.experiment.addData(&quot;premature&quot;, 1);&amp;#10;        } else {&amp;#10;            psychoJS.experiment.addData(&quot;premature&quot;, 0);&amp;#10;        }&amp;#10;    } else {&amp;#10;        if ((signal === 0)) {&amp;#10;            if ((key_resp.rt &lt;= StopSignal_start)) {&amp;#10;                psychoJS.experiment.addData(&quot;premature&quot;, 1);&amp;#10;            } else {&amp;#10;                psychoJS.experiment.addData(&quot;premature&quot;, 0);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if (key_resp.rt) {&amp;#10;    rt = ((key_resp.rt - StopSignal_start) * 1000);&amp;#10;    psychoJS.experiment.addData(&quot;RT&quot;, rt);&amp;#10;}&amp;#10;if ((signal === 1)) {&amp;#10;    if ((key_resp.keys.length &gt; 0)) {&amp;#10;        ssd = (ssd - 0.05);&amp;#10;        if ((ssd &lt;= 0.05)) {&amp;#10;            ssd = 0.05;&amp;#10;        }&amp;#10;    } else {&amp;#10;        ssd = (ssd + 0.05);&amp;#10;        if ((ssd &gt;= 0.65)) {&amp;#10;            ssd = 0.65;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="# code and log premature responses&amp;#10;if key_resp.rt:&amp;#10;    if signal == 1:&amp;#10;        if key_resp.rt &lt;= (StopSignal_start + ssd):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)&amp;#10;    elif signal == 0:&amp;#10;        if key_resp.rt &lt;= (StopSignal_start):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)&amp;#10;&amp;#10;# RT from the end of Go signal to response&amp;#10;if key_resp.rt:&amp;#10;    rt = (key_resp.rt - StopSignal_start ) * 1000 #sec to ms&amp;#10;    thisExp.addData(&quot;RT&quot;, rt)&amp;#10;    &amp;#10;# dynamic SSD&amp;#10;if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:&amp;#10;        ssd = ssd - 0.050&amp;#10;        if ssd &lt;= 0.050:&amp;#10;            ssd = 0.050&amp;#10;    else:&amp;#10;        ssd = ssd + 0.050&amp;#10;        if ssd &gt;= 0.650:&amp;#10;            ssd = 0.650&amp;#10;            &amp;#10;&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="ssd_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -172,38 +172,13 @@
         <Param val="(2,2)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="dot_start" valType="code" updates="None" name="startVal"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="dot_dur" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.8" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="128" valType="num" updates="constant" name="texture resolution"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
       </ImageComponent>
-      <TextComponent name="blank_txt">
-        <Param val="white" valType="color" updates="constant" name="color"/>
-        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
-        <Param val="1" valType="num" updates="constant" name="contrast"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="None" valType="str" updates="constant" name="flip"/>
-        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
-        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
-        <Param val="blank_txt" valType="code" updates="None" name="name"/>
-        <Param val="" valType="num" updates="constant" name="opacity"/>
-        <Param val="0" valType="num" updates="constant" name="ori"/>
-        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="blank_start" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="blank_dur" valType="code" updates="constant" name="stopVal"/>
-        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="" valType="str" updates="constant" name="text"/>
-        <Param val="from exp settings" valType="str" updates="None" name="units"/>
-        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
-      </TextComponent>
       <ImageComponent name="go_img">
         <Param val="center" valType="str" updates="constant" name="anchor"/>
         <Param val="$[1,1,1]" valType="color" updates="constant" name="color"/>
@@ -220,13 +195,13 @@
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
         <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
-        <Param val="False" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="(2,2)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="$go_start" valType="code" updates="None" name="startVal"/>
+        <Param val="0.8" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="$go_dur" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.1" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="128" valType="num" updates="constant" name="texture resolution"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
@@ -251,9 +226,9 @@
         <Param val="(2,2)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="$go_start + ssd" valType="code" updates="None" name="startVal"/>
+        <Param val="$start_stop + ssd" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="$stop_dur" valType="code" updates="constant" name="stopVal"/>
+        <Param val="0.07" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
         <Param val="128" valType="num" updates="constant" name="texture resolution"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
@@ -264,18 +239,31 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="True" valType="bool" updates="constant" name="discard previous"/>
         <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
         <Param val="key_resp" valType="code" updates="None" name="name"/>
         <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
         <Param val="0.0" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="$full_dur" valType="code" updates="constant" name="stopVal"/>
+        <Param val="1.7" valType="code" updates="constant" name="stopVal"/>
         <Param val="first key" valType="str" updates="constant" name="store"/>
         <Param val="True" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <StaticComponent name="ISI">
+        <Param val="" valType="code" updates="None" name="code"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="ISI" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="0.8" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="syncScreenRefresh"/>
+      </StaticComponent>
     </Routine>
     <Routine name="BREAK">
       <CodeComponent name="break_code">
@@ -283,8 +271,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="if ((Loop_blocchi.thisRepN === (nb_blocks - 1))) {&amp;#10;    Loop_blocchi.finished = true;&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if Loop_blocchi.thisRepN == (nb_blocks -1):&amp;#10;    Loop_blocchi.finished = True&amp;#10;    continueRoutine = False&amp;#10;    " valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="if ((Loop_blocchi.thisRepN === (nb_loop_blocks - 1))) {&amp;#10;    Loop_blocchi.finished = true;&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if Loop_blocchi.thisRepN == (nb_loop_blocks  -1):&amp;#10;    Loop_blocchi.finished = True&amp;#10;    continueRoutine = False&amp;#10;    " valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -405,8 +393,8 @@
       <CodeComponent name="setting_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="nb_blocks = 4&amp;#10;nb_training = expInfo['training'] " valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="nb_blocks = 4;&amp;#10;nb_training = expInfo[&quot;training&quot;];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="nb_loop_blocks = 4&amp;#10;#trials in bloch &amp;#10;nb_loop_trial = 16 # 16 x 8= 128 (32 stop; 96 GO) &amp;#10;&amp;#10;iti = 1.6&amp;#10;nb_training = expInfo['training'] " valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="nb_loop_blocks = 4;&amp;#10;nb_loop_trial = 16;&amp;#10;iti = 1.6;&amp;#10;nb_training = expInfo[&quot;training&quot;];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
@@ -553,13 +541,40 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
+    <Routine name="ITI">
+      <TextComponent name="iti_txt">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Open Sans" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="iti_txt" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="$iti" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="" valType="str" updates="constant" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="INFO"/>
     <Routine name="ISTRUCTIONS"/>
     <LoopInitiator loopType="TrialHandler" name="Loop_practice">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'stop_1.png', 'correctkey': 'left', 'signal': 1}, {'go_file': 'go_right.png', 'stop_file': 'stop_1.png', 'correctkey': 'right', 'signal': 1}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'stop_2.png', 'correctkey': 'left', 'signal': 1}, {'go_file': 'go_right.png', 'stop_file': 'stop_2.png', 'correctkey': 'right', 'signal': 1}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'stop.jpg', 'correct_key': 'left', 'signal': 1}, {'go_file': 'go_right.png', 'stop_file': 'stop.jpg', 'correct_key': 'right', 'signal': 1}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="conditions.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
@@ -570,6 +585,7 @@
     </LoopInitiator>
     <Routine name="TRIAL_SST"/>
     <Routine name="FEEDBACK"/>
+    <Routine name="ITI"/>
     <LoopTerminator name="Loop_practice"/>
     <Routine name="BEGIN_EXP"/>
     <LoopInitiator loopType="TrialHandler" name="Loop_blocchi">
@@ -579,22 +595,23 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="False" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="nb_blocks" valType="num"/>
+      <Param name="nReps" updates="None" val="nb_loop_blocks" valType="num"/>
       <Param name="name" updates="None" val="Loop_blocchi" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <LoopInitiator loopType="TrialHandler" name="loop_trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'stop_1.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'stop_1.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correctkey': 'right'}, {'go_file': 'go_left.png', 'stop_file': 'stop_2.png', 'correctkey': 'left'}, {'go_file': 'go_right.png', 'stop_file': 'stop_2.png', 'correctkey': 'right'}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'bianco.png', 'correct_key': 'left', 'signal': 0}, {'go_file': 'go_right.png', 'stop_file': 'bianco.png', 'correct_key': 'right', 'signal': 0}, {'go_file': 'go_left.png', 'stop_file': 'stop.jpg', 'correct_key': 'left', 'signal': 1}, {'go_file': 'go_right.png', 'stop_file': 'stop.jpg', 'correct_key': 'right', 'signal': 1}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="conditions.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="4" valType="num"/>
+      <Param name="loopType" updates="None" val="fullRandom" valType="str"/>
+      <Param name="nReps" updates="None" val="nb_loop_trial" valType="num"/>
       <Param name="name" updates="None" val="loop_trials" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="TRIAL_SST"/>
+    <Routine name="ITI"/>
     <LoopTerminator name="loop_trials"/>
     <Routine name="BREAK"/>
     <LoopTerminator name="Loop_blocchi"/>
