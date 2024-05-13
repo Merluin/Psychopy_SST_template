@@ -94,11 +94,11 @@
       <CodeComponent name="feedback_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="correct_msg = 'Correct'&amp;#10;incorrect_msg = 'Oops'&amp;#10;too_slow_msg = 'To slow'&amp;#10;too_fast_msg = 'To fast'&amp;#10;correct_stop_msg = 'Perferfect stop'&amp;#10;incorrect_stop_msg = 'You must Stop !'&amp;#10;msg = &quot;&quot;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="# Feedback Routine:&amp;#10;# This routine provides feedback to participants based on their responses in the trial.&amp;#10;# It displays messages corresponding to their performance, differentiating between&amp;#10;# correct, incorrect, too fast, too slow, and stop-signal responses.&amp;#10;&amp;#10;# Define the feedback messages for various response outcomes.&amp;#10;msg = &quot;&quot;  # Initializes the message variable to be empty&amp;#10;correct_msg = 'Correct'  # Message displayed for correct responses in Go trials&amp;#10;incorrect_msg = 'Oops'  # Message for incorrect responses&amp;#10;too_slow_msg = 'Too slow'  # Message when response is slower than expected&amp;#10;too_fast_msg = 'Too fast'  # Message when response is faster than expected&amp;#10;correct_stop_msg = 'Perfect stop'  # Message for successful inhibition in a Stop trial&amp;#10;incorrect_stop_msg = 'You must Stop!'  # Message when failing to inhibit in a Stop trial&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="correct_msg = &quot;Correct&quot;;&amp;#10;incorrect_msg = &quot;Oops&quot;;&amp;#10;too_slow_msg = &quot;To slow&quot;;&amp;#10;too_fast_msg = &quot;To fast&quot;;&amp;#10;correct_stop_msg = &quot;Perferfect stop&quot;;&amp;#10;incorrect_stop_msg = &quot;You must Stop !&quot;;&amp;#10;msg = &quot;&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="if ((signal === 0)) {&amp;#10;    if ((key_resp.keys !== null)) {&amp;#10;        if ((key_resp.rt &lt;= (StopSignal_start - 0.05))) {&amp;#10;            msg = too_fast_msg;&amp;#10;        } else {&amp;#10;            if ((key_resp.corr === 1)) {&amp;#10;                msg = correct_msg;&amp;#10;            } else {&amp;#10;                if ((key_resp.corr === 0)) {&amp;#10;                    msg = incorrect_msg;&amp;#10;                } else {&amp;#10;                    if ((key_resp.rt &gt;= ((StopSignal_start - 0.05) + ssd))) {&amp;#10;                        msg = too_slow_msg;&amp;#10;                    }&amp;#10;                }&amp;#10;            }&amp;#10;        }&amp;#10;    } else {&amp;#10;        msg = too_slow_msg;&amp;#10;    }&amp;#10;} else {&amp;#10;    if ((signal === 1)) {&amp;#10;        if ((key_resp.keys !== null)) {&amp;#10;            msg = incorrect_stop_msg;&amp;#10;        } else {&amp;#10;            msg = correct_stop_msg;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if signal == 0:&amp;#10;    if key_resp.keys is not None:&amp;#10;        if key_resp.rt &lt;= StopSignal_start - 0.05 :&amp;#10;            msg = too_fast_msg&amp;#10;        elif key_resp.corr == 1:&amp;#10;            msg = correct_msg&amp;#10;        elif key_resp.corr == 0:&amp;#10;            msg = incorrect_msg&amp;#10;        elif key_resp.rt &gt;= (StopSignal_start - 0.05 + ssd):&amp;#10;            msg = too_slow_msg&amp;#10;    else:&amp;#10;        msg = too_slow_msg&amp;#10;elif signal == 1:&amp;#10;    if key_resp.keys is not None:&amp;#10;        msg = incorrect_stop_msg&amp;#10;    else:&amp;#10;        msg = correct_stop_msg&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Determines the feedback message based on the trial type and response characteristics.&amp;#10;if signal == 0:  # For Go trials&amp;#10;    if key_resp.keys is not None:  # If there was a response&amp;#10;        if key_resp.rt &lt;= StopSignal_start - 0.05:&amp;#10;            msg = too_fast_msg  # If response is premature&amp;#10;        elif key_resp.corr == 1:&amp;#10;            msg = correct_msg  # If response is correct&amp;#10;        elif key_resp.corr == 0:&amp;#10;            msg = incorrect_msg  # If response is incorrect&amp;#10;        elif key_resp.rt &gt;= (StopSignal_start - 0.05 + ssd):&amp;#10;            msg = too_slow_msg  # If response is too slow&amp;#10;    else:&amp;#10;        msg = too_slow_msg  # If no response, considered too slow&amp;#10;elif signal == 1:  # For Stop trials&amp;#10;    if key_resp.keys is not None:&amp;#10;        msg = incorrect_stop_msg  # If there was a response, it's incorrect (failed to stop)&amp;#10;    else:&amp;#10;        msg = correct_stop_msg  # If no response, it's a perfect stop&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -138,17 +138,17 @@
       <CodeComponent name="ssd_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="event. Mouse(visible=False)&amp;#10;&amp;#10;# timing in which interval between Go and stop begin&amp;#10;StopSignal_start = 0.95&amp;#10;&amp;#10;# ssd set to 150 and min 50 max 650&amp;#10;ssd_1 = 0.150&amp;#10;ssd_2 = 0.15&amp;#10;ssd = 0.15" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="new psychoJS.eventManager.Mouse({&quot;visible&quot;: false});&amp;#10;StopSignal_start = 0.95;&amp;#10;ssd_1 = 0.15;&amp;#10;ssd_2 = 0.15;&amp;#10;ssd = 0.15;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="# Trial Routine:&amp;#10;# This routine manages the sequence of events in a single trial, including&amp;#10;# handling stop signals, recording response times, and adjusting stop-signal delays.&amp;#10;&amp;#10;# Hides the mouse cursor for the duration of the experiment to avoid distractions.&amp;#10;event.Mouse(visible=False)&amp;#10;&amp;#10;# The predefined timing for the interval between the Go signal and the Stop signal start.&amp;#10;StopSignal_start = 0.95  # Stop signal starts at 950 ms after the Go signal&amp;#10;&amp;#10;# Initial Stop Signal Delay (SSD) set to 150 milliseconds.&amp;#10;ssd = 0.15&amp;#10;ssd_1 = 0.15&amp;#10;ssd_2 = 0.15&amp;#10;" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="new psychoJS.eventManager.Mouse({&quot;visible&quot;: false});&amp;#10;StopSignal_start = 0.95;&amp;#10;ssd = 0.15;&amp;#10;ssd_1 = 0.15;&amp;#10;ssd_2 = 0.15;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="psychoJS.experiment.addData(&quot;SSD&quot;, (ssd * 1000));&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="thisExp.addData(&quot;SSD&quot;, ssd*1000)&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Records the SSD at the beginning of each trial in milliseconds.&amp;#10;thisExp.addData(&quot;SSD&quot;, ssd * 1000)  # SSD is stored in milliseconds&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
         <Param val="if (key_resp.rt) {&amp;#10;    if ((signal === 1)) {&amp;#10;        if ((key_resp.rt &lt;= (StopSignal_start + ssd))) {&amp;#10;            psychoJS.experiment.addData(&quot;premature&quot;, 1);&amp;#10;        } else {&amp;#10;            psychoJS.experiment.addData(&quot;premature&quot;, 0);&amp;#10;        }&amp;#10;    } else {&amp;#10;        if ((signal === 0)) {&amp;#10;            if ((key_resp.rt &lt;= StopSignal_start)) {&amp;#10;                psychoJS.experiment.addData(&quot;premature&quot;, 1);&amp;#10;            } else {&amp;#10;                psychoJS.experiment.addData(&quot;premature&quot;, 0);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;if (key_resp.rt) {&amp;#10;    rt = ((key_resp.rt - StopSignal_start) * 1000);&amp;#10;    psychoJS.experiment.addData(&quot;RT&quot;, rt);&amp;#10;}&amp;#10;if ((signal === 1)) {&amp;#10;    if ((key_resp.keys.length &gt; 0)) {&amp;#10;        ssd = (ssd - 0.05);&amp;#10;        if ((ssd &lt;= 0.05)) {&amp;#10;            ssd = 0.05;&amp;#10;        }&amp;#10;    } else {&amp;#10;        ssd = (ssd + 0.05);&amp;#10;        if ((ssd &gt;= 0.65)) {&amp;#10;            ssd = 0.65;&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="# code and log premature responses&amp;#10;if key_resp.rt:&amp;#10;    if signal == 1:&amp;#10;        if key_resp.rt &lt;= (StopSignal_start + ssd):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)&amp;#10;    elif signal == 0:&amp;#10;        if key_resp.rt &lt;= (StopSignal_start):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)&amp;#10;&amp;#10;# RT from the end of Go signal to response&amp;#10;if key_resp.rt:&amp;#10;    rt = (key_resp.rt - StopSignal_start ) * 1000 #sec to ms&amp;#10;    thisExp.addData(&quot;RT&quot;, rt)&amp;#10;    &amp;#10;# dynamic SSD&amp;#10;if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:&amp;#10;        ssd = ssd - 0.050&amp;#10;        if ssd &lt;= 0.050:&amp;#10;            ssd = 0.050&amp;#10;    else:&amp;#10;        ssd = ssd + 0.050&amp;#10;        if ssd &gt;= 0.650:&amp;#10;            ssd = 0.650&amp;#10;            &amp;#10;&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="# Code to log and handle premature responses.&amp;#10;if key_resp.rt:  # Checks if there was a response&amp;#10;    if signal == 1:  # For Stop trials&amp;#10;        # Checks if the response was made before the sum of StopSignal was presented&amp;#10;        if key_resp.rt &lt;= (StopSignal_start + ssd):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)  # Logs response as premature&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)  # Logs response as not premature&amp;#10;    elif signal == 0:  # For Go trials&amp;#10;        # Checks if the response was made before the Go signal was fully presented&amp;#10;        if key_resp.rt &lt;= (StopSignal_start):&amp;#10;            thisExp.addData(&quot;premature&quot;, 1)&amp;#10;        else:&amp;#10;            thisExp.addData(&quot;premature&quot;, 0)&amp;#10;&amp;#10;# Calculates and logs the Reaction Time (RT) from the end of the Go signal to the response.&amp;#10;if key_resp.rt:&amp;#10;    rt = (key_resp.rt - StopSignal_start) * 1000  # Converts seconds to milliseconds&amp;#10;    thisExp.addData(&quot;RT&quot;, rt)&amp;#10;&amp;#10;# Dynamic SSD adjustment:&amp;#10;# Adjusts the SSD based on the participant's performance in Stop trials.&amp;#10;if signal == 1:&amp;#10;    if len(key_resp.keys) &gt; 0:  # If the participant responded&amp;#10;        ssd -= 0.050  # Decreases SSD by 50 ms to make stopping easier next time&amp;#10;        if ssd &lt;= 0.050:  # Ensures SSD doesn't go below 50 ms&amp;#10;            ssd = 0.050&amp;#10;    else:  # If the participant did not respond&amp;#10;        ssd += 0.050  # Increases SSD by 50 ms to make stopping harder next time&amp;#10;        if ssd &gt;= 0.650:  # Ensures SSD doesn't exceed 650 ms&amp;#10;            ssd = 0.650&amp;#10;&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant" name="End Routine"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="ssd_code" valType="code" updates="None" name="name"/>
       </CodeComponent>
@@ -226,7 +226,7 @@
         <Param val="(2,2)" valType="list" updates="constant" name="size"/>
         <Param val="" valType="code" updates="None" name="startEstim"/>
         <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="$start_stop + ssd" valType="code" updates="None" name="startVal"/>
+        <Param val="$StopSignal_start + ssd" valType="code" updates="None" name="startVal"/>
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="0.07" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
@@ -272,8 +272,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="if ((Loop_blocchi.thisRepN === (nb_loop_blocks - 1))) {&amp;#10;    Loop_blocchi.finished = true;&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if Loop_blocchi.thisRepN == (nb_loop_blocks  -1):&amp;#10;    Loop_blocchi.finished = True&amp;#10;    continueRoutine = False&amp;#10;    " valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="# Break Between Blocks Code:&amp;#10;# This code controls the transition between blocks of trials. Specifically, it&amp;#10;# checks the current block number and skips the break if it's the last block,&amp;#10;# allowing the experiment to proceed directly to the concluding routine.&amp;#10;&amp;#10;# Check if the current block is the last block in the experiment.&amp;#10;# Loop_blocchi.thisRepN returns the zero-based index of the current repetition,&amp;#10;# so we compare it against (nb_loop_blocks - 1) which is the index of the last block.&amp;#10;if Loop_blocchi.thisRepN == (nb_loop_blocks - 1):&amp;#10;    Loop_blocchi.finished = True  # Ends the loop after the current block finishes&amp;#10;    continueRoutine = False  # Immediately ends the current routine to skip the break&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -380,7 +380,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -393,11 +393,11 @@
       <CodeComponent name="setting_code">
         <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="nb_loop_blocks = 4&amp;#10;#trials in bloch &amp;#10;nb_loop_trial = 16 # 16 x 8= 128 (32 stop; 96 GO) &amp;#10;&amp;#10;iti = 1.6&amp;#10;nb_training = expInfo['training'] " valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="# This section sets essential parameters for the experiment based on user input &amp;#10;# and predefined settings. These parameters determine the number of trials and blocks, &amp;#10;# include optional training, and set the duration between trials.&amp;#10;&amp;#10;# Number of blocks to loop through in the experiment&amp;#10;nb_loop_blocks = 4 # default 4&amp;#10;&amp;#10;# Number of trials per block. Each block contains 16 trials,&amp;#10;# cumulatively 128 trials across all blocks with a distribution of &amp;#10;# 32 stop trials and 96 go trials (stop:go ratio = 1:4 please refer to the conditions.xlsx file)&amp;#10;nb_loop_trial = 16  # default 16&amp;#10;# 16 trials per block x 8 blocks = 128 total trials&amp;#10;&amp;#10;# Inter-Trial Interval (ITI): This is the time delay between the end of one trial &amp;#10;# and the start of the next trial, set to 1.6 seconds&amp;#10;iti = 1.6&amp;#10;&amp;#10;# Training flag obtained from the experiment info dialogue box:&amp;#10;# '1' means the experiment includes a training phase,&amp;#10;# '0' means the training phase is skipped&amp;#10;nb_training = expInfo['training']" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="nb_loop_blocks = 4;&amp;#10;nb_loop_trial = 16;&amp;#10;iti = 1.6;&amp;#10;nb_training = expInfo[&quot;training&quot;];&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
@@ -568,6 +568,25 @@
         <Param val="" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
     </Routine>
+    <Routine name="PREPROCESSING">
+      <CodeComponent name="code">
+        <Param val="import pandas as pd&amp;#10;import numpy as np&amp;#10;" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="import * as pd from 'pandas';&amp;#10;import * as np from 'numpy';&amp;#10;" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="/* Syntax Error: Fix Python code */" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="thisExp.saveAsWideText('data/temp.csv', delim='auto')&amp;#10;&amp;#10;data = pd.read_csv(&quot;data/temp.csv&quot;, sep=&quot;,&quot;, header=0)&amp;#10;&amp;#10;# Filter rows where 'Loop_blocchi.thisRepN' is greater than or equal to 0&amp;#10;data = data[data['Loop_blocchi.thisRepN'] &gt;= 0]&amp;#10;&amp;#10;# Convert necessary columns to categorical type and perform calculations&amp;#10;data['subject'] = pd.Categorical(data['participant'])&amp;#10;data['go_file'] = pd.Categorical(data['go_file'])&amp;#10;data['stop_file'] = pd.Categorical(data['stop_file'])&amp;#10;data['correct_key'] = pd.Categorical(data['correct_key'])&amp;#10;data['signal'] = pd.Categorical(data['signal'])&amp;#10;data['response'] = pd.Categorical(data['key_resp.keys'])&amp;#10;&amp;#10;# Conditionally fill the SSD column based on signal type&amp;#10;data['SSD'] = np.where(data['signal'] == '0', np.nan, data['SSD'])&amp;#10;&amp;#10;# Calculate real SSD values by converting event timestamps to milliseconds and rounding&amp;#10;data['SSD.real'] = round((data['stop_img.stopped'].astype(float) - data['go_img.stopped'].astype(float)) * 1000, 0)&amp;#10;&amp;#10;# Include extra columns as specified&amp;#10;data['congruent'] = data['key_resp.corr']&amp;#10;data['premature'] = data['premature']&amp;#10;data['rt'] = data['RT']&amp;#10;data['bloch'] = data['Loop_blocchi.thisRepN'] + 1&amp;#10;data['trial'] = data['loop_trials.thisN'] + 1&amp;#10;&amp;#10;# Select only the specified columns&amp;#10;data = data[['subject', 'go_file', 'stop_file', 'correct_key', 'signal', 'SSD', 'premature', 'bloch', 'trial', 'response', 'congruent', 'rt']]&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;# Create a filename based on the participant's ID&amp;#10;# Ensure that 'participant' is correctly keyed in your expInfo dictionary&amp;#10;participant_id = expInfo['participant']  # Replace 'participant' if the key differs&amp;#10;filename = f&quot;data/processed_data_participant_{participant_id}.xlsx&quot;&amp;#10;&amp;#10;# Save the processed data to an Excel file with the participant-specific filename&amp;#10;data.to_excel(filename, index=False)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Py" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="INFO"/>
@@ -587,7 +606,19 @@
     <Routine name="FEEDBACK"/>
     <Routine name="ITI"/>
     <LoopTerminator name="Loop_practice"/>
+    <LoopInitiator loopType="TrialHandler" name="Loop_begin">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="False" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="nb_training" valType="num"/>
+      <Param name="name" updates="None" val="Loop_begin" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
     <Routine name="BEGIN_EXP"/>
+    <LoopTerminator name="Loop_begin"/>
     <LoopInitiator loopType="TrialHandler" name="Loop_blocchi">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>

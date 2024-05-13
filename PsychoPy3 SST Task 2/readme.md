@@ -29,3 +29,13 @@ Thomas.quettier2@unibo.it
 ## References
 Verbruggen, F., Aron, A. R., Band, G. P., Beste, C., Bissett, P. G., Brockett, A. T., ... & Boehler, C. N. (2019). A consensus guide to capturing the ability to inhibit actions and impulsive behaviors in the stop-signal task. elife, 8, e46323.
 
+For collaborators contributing to this repository, please prefix your commit messages with appropriate tags for efficient tracking and management:
+- **BF**: Bug Fix - for resolving errors or issues in existing code.
+- **FF**: Feature Fix - for fixes to unreleased code features.
+- **RF**: Refactoring - for code structure or design modifications.
+- **NF**: New Feature - for introducing new functionalities.
+- **ENH**: Enhancement - for improvements to existing features or code.
+- **DOC**: Documentation - for updates or additions to project documentation.
+- **TEST**: Testing - for adding new tests or modifying existing ones. 
+
+Your cooperation and adherence to these guidelines help maintain the quality and integrity of our project. Thank you for your contributions to the IMPLICIT research initiative.
