@@ -10,8 +10,8 @@ This repository contains all necessary resources for setting up and running the 
 The Stop Signal Task involves presenting participants with Go trials where they must respond quickly to a stimulus, and Stop trials where they must inhibit their response upon seeing a stop signal. The task dynamically adjusts the difficulty of stopping based on individual performance to calculate the SSRT.
 
 ### Task Details
-- **Initial SSD**: 150 ms, adjustable between 50 ms and 650 ms.
-- **Stimuli**: Green or red arrows indicating the response direction.
+- **Initial Stop Signal Delay (dynamic SSD)**: 150 ms from go signal offset, adjustable between 50 ms and 650 ms.
+- **Stimuli**: Green arrows indicating the response direction.
 - **Stop Signal**: "XX" presented after a variable delay.
 
 ## Requirements
