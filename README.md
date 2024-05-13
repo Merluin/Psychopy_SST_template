@@ -48,3 +48,15 @@ Verbruggen, F., Aron, A. R., Band, G. P., Beste, C., Bissett, P. G., Brockett, A
 While not legally binding, the author would appreciate an acknowledgment or citation
 where possible if this software is used in the development of new software, publications,
 or research. For citation guidelines, please refer to the CITATION file in this repository.
+## Collaborative Contributions
+
+For collaborators contributing to this repository, please prefix your commit messages with appropriate tags for efficient tracking and management:
+- **BF**: Bug Fix - for resolving errors or issues in existing code.
+- **FF**: Feature Fix - for fixes to unreleased code features.
+- **RF**: Refactoring - for code structure or design modifications.
+- **NF**: New Feature - for introducing new functionalities.
+- **ENH**: Enhancement - for improvements to existing features or code.
+- **DOC**: Documentation - for updates or additions to project documentation.
+- **TEST**: Testing - for adding new tests or modifying existing ones. 
+
+Your cooperation and adherence to these guidelines help maintain the quality and integrity of our project. 
