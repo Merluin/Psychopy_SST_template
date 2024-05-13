@@ -1,6 +1,6 @@
 # Stop Signal Task (SST) Repository
 
-This repository contains all necessary resources for setting up and running the Stop Signal Task (SST), a behavioral task used to study response inhibition and control. It includes a PsychoPy3 implementation of the task and an R program to compute the Stop Signal Reaction Time (SSRT) based on the task data.
+This repository contains all necessary resources for setting up and running the Stop Signal Task (SST), a behavioral task used to study response inhibition and control. It includes a PsychoPy3 implementation of the task and an R program to compute the Stop Signal Reaction Time (SSRT) based on the task data. Note that the task and preprocessing are done according to verbruggen et al., 2019.
 
 ## Repository Structure
 - **PsychoPy3 SST Task**: Contains the PsychoPy3 scripts for running the SST.
