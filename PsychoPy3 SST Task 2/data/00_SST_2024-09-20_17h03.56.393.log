@@ -1,0 +1,114 @@
+1.2726 	WARNING 	We strongly recommend you activate the PTB sound engine in PsychoPy prefs as the preferred audio engine. Its timing is vastly superior. Your prefs are currently set to use ['sounddevice', 'PTB', 'pyo', 'pygame'] (in that order).
+8.0115 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+8.0120 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([1, 1, 1]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7f8bfbdeb790>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7f8c5544b4f0>, multiSample=False, name='window1', numSamples=2, pos=[420.0, 262.5], screen=0, size=array([3360, 2100]), stencilBits=0, stereo=False, units='norm', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+8.0123 	EXP 	window1: mouseVisible = True
+8.0123 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+8.0123 	EXP 	window1: recordFrameIntervals = False
+8.0952 	EXP 	window1: recordFrameIntervals = True
+8.9287 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+11.6033 	EXP 	Created info_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='info_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+11.6233 	EXP 	Created istr_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='istr_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+11.6242 	EXP 	window1: mouseVisible = False
+11.6247 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.6392 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.6465 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.6604 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.6728 	EXP 	Created dot_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='images/fix.png', interpolate=True, mask=None, maskParams=None, name='dot_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.6825 	EXP 	Created go_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='go_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.6922 	EXP 	Created stop_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stop_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.6940 	EXP 	Created feedback_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='feedback_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+11.6966 	EXP 	Created iti_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='iti_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+11.7060 	EXP 	Created begin_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='begin_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1)
+11.7062 	EXP 	window1: mouseVisible = False
+11.7067 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.7177 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.7294 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.7387 	WARNING 	Requested image 'images/fix.png' not found but similar filename 'images/fix.jpg' exists. This will be used instead but changing the filename is advised.
+11.7483 	EXP 	Created dot_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, image='images/fix.png', interpolate=True, mask=None, maskParams=None, name='dot_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.7590 	EXP 	Created go_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='go_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.7687 	EXP 	Created stop_img = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, image='sin', interpolate=True, mask=None, maskParams=None, name='stop_img', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([2., 2.]), texRes=128.0, units='norm', win=Window(...))
+11.7714 	EXP 	Created iti_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='iti_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='norm', win=Window(...), wrapWidth=1)
+11.7771 	EXP 	Created break_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='break_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text="Pause.\n\nPress 'space' to continue.", units='norm', win=Window(...), wrapWidth=1)
+11.7817 	EXP 	Created thanks_txt = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([-1., -1., -1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='thanks_txt', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Thank you for your time.', units='norm', win=Window(...), wrapWidth=1)
+11.8098 	WARNING 	t of last frame was 2881.23ms (=1/0)
+11.8098 	EXP 	info_txt: autoDraw = True
+11.9467 	WARNING 	t of last frame was 32.51ms (=1/30)
+11.9687 	WARNING 	t of last frame was 22.06ms (=1/45)
+12.0467 	WARNING 	t of last frame was 32.38ms (=1/30)
+12.0686 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+13.0803 	DATA 	Keypress: space
+13.1000 	EXP 	info_txt: autoDraw = False
+13.1000 	EXP 	istr_txt: autoDraw = True
+14.2719 	EXP 	Imported conditions.xlsx as conditions, 8 conditions, 4 params
+14.2726 	EXP 	Created sequence: random, trialTypes=8, nReps=1, seed=None
+14.2730 	EXP 	New trial (rep=0, index=0): {'go_file': 'go_left.png', 'stop_file': 'go_left.png', 'correct_key': 'left', 'signal': 0}
+14.2731 	WARNING 	Requested image 'images/go_left.png' not found but similar filename 'images/go_left.jpg' exists. This will be used instead but changing the filename is advised.
+14.2830 	WARNING 	Requested image 'images/go_left.png' not found but similar filename 'images/go_left.jpg' exists. This will be used instead but changing the filename is advised.
+14.2959 	EXP 	window1: recordFrameIntervals = False
+14.3043 	DATA 	Keypress: space
+14.3336 	EXP 	istr_txt: autoDraw = False
+14.3336 	EXP 	go_img: image = 'images/go_left.png'
+14.3336 	EXP 	stop_img: image = 'images/go_left.png'
+14.3336 	EXP 	dot_img: autoDraw = True
+14.3348 	EXP 	window1: recordFrameIntervals = True
+15.1388 	EXP 	dot_img: autoDraw = False
+15.1388 	EXP 	go_img: autoDraw = True
+15.3998 	EXP 	stop_img: autoDraw = True
+15.4882 	EXP 	stop_img: autoDraw = False
+15.9894 	DATA 	Keypress: left
+16.0020 	EXP 	dot_img: autoDraw = False
+16.0020 	EXP 	go_img: autoDraw = False
+16.0020 	EXP 	stop_img: autoDraw = False
+16.0020 	EXP 	feedback_txt: height = 0.05
+16.0020 	EXP 	feedback_txt: height = 0.05
+16.0020 	EXP 	feedback_txt: height = 0.05
+16.0020 	EXP 	feedback_txt: text = 'Correct'
+16.0020 	EXP 	feedback_txt: autoDraw = True
+16.9553 	EXP 	feedback_txt: autoDraw = False
+16.9553 	EXP 	iti_txt: autoDraw = True
+18.5395 	EXP 	New trial (rep=0, index=1): {'go_file': 'go_right.png', 'stop_file': 'stop.jpg', 'correct_key': 'None', 'signal': 1}
+18.5398 	WARNING 	Requested image 'images/go_right.png' not found but similar filename 'images/go_right.jpg' exists. This will be used instead but changing the filename is advised.
+19.3409 	EXP 	window1: recordFrameIntervals = False
+19.3691 	EXP 	iti_txt: autoDraw = False
+19.3691 	EXP 	iti_txt: autoDraw = False
+19.3691 	EXP 	go_img: image = 'images/go_right.png'
+19.3691 	EXP 	stop_img: image = 'images/stop.jpg'
+19.3691 	EXP 	dot_img: autoDraw = True
+19.3698 	EXP 	window1: recordFrameIntervals = True
+20.1828 	EXP 	dot_img: autoDraw = False
+20.1828 	EXP 	go_img: autoDraw = True
+20.4305 	EXP 	stop_img: autoDraw = True
+20.5047 	EXP 	stop_img: autoDraw = False
+20.7037 	DATA 	Keypress: right
+20.7107 	EXP 	dot_img: autoDraw = False
+20.7107 	EXP 	go_img: autoDraw = False
+20.7107 	EXP 	stop_img: autoDraw = False
+20.7107 	EXP 	feedback_txt: height = 0.05
+20.7107 	EXP 	feedback_txt: height = 0.05
+20.7107 	EXP 	feedback_txt: height = 0.05
+20.7107 	EXP 	feedback_txt: text = 'You must Stop!'
+20.7107 	EXP 	feedback_txt: autoDraw = True
+21.7047 	EXP 	feedback_txt: autoDraw = False
+21.7047 	EXP 	feedback_txt: autoDraw = False
+21.7047 	EXP 	iti_txt: autoDraw = True
+23.2891 	EXP 	New trial (rep=0, index=2): {'go_file': 'go_right.png', 'stop_file': 'go_right.png', 'correct_key': 'right', 'signal': 0}
+23.2915 	WARNING 	Requested image 'images/go_right.png' not found but similar filename 'images/go_right.jpg' exists. This will be used instead but changing the filename is advised.
+23.3013 	WARNING 	Requested image 'images/go_right.png' not found but similar filename 'images/go_right.jpg' exists. This will be used instead but changing the filename is advised.
+23.3087 	EXP 	window1: recordFrameIntervals = False
+23.3179 	EXP 	iti_txt: autoDraw = False
+23.3179 	EXP 	iti_txt: autoDraw = False
+23.3179 	EXP 	go_img: image = 'images/go_right.png'
+23.3179 	EXP 	stop_img: image = 'images/go_right.png'
+23.3179 	EXP 	dot_img: autoDraw = True
+23.3189 	EXP 	window1: recordFrameIntervals = True
+24.1506 	EXP 	dot_img: autoDraw = False
+24.1506 	EXP 	go_img: autoDraw = True
+24.3547 	EXP 	stop_img: autoDraw = True
+24.4172 	EXP 	stop_img: autoDraw = False
+25.5389 	EXP 	window1: mouseVisible = True
